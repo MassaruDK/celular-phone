@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@source "./index.html";
+@source "./script.js";
+@theme {
+  --color-orca-cyan: #00c3ff;
+  --color-orca-deep: #020617;
+  --radius-iphone: 3.8rem;
+  --radius-touch: 3.2rem;
+}

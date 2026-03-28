@@ -1,0 +1,302 @@
+/* -------------------------------------------------------------------
+   ORCA RP - REPROJETO ELITE v25.0 (ENGINEERING REPAIR)
+   ------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --titanium-dark: #0f1115;
+    --titanium-light: #2c2e33;
+    --display-radius: 5.4vh;
+    --chassis-radius: 6.6vh;
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* TRANSPARÊNCIA NUI DE NÍVEL INDUSTRIAL */
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    background: transparent !important;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#phone-wrapper {
+    position: fixed;
+    bottom: 4vh;
+    right: 4vh;
+    width: 44vh;
+    height: 88vh;
+    background: transparent !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* -------------------------------------------------------------------
+   CHASSIS TITANIUM (FIXING BUTTON ARTIFACTS - IMAGE 9)
+   ------------------------------------------------------------------- */
+.iphone-master-chassis {
+    width: 41.5vh;
+    height: 85.5vh;
+    position: relative;
+    background: var(--titanium-dark) !important;
+    border-radius: var(--chassis-radius);
+    padding: 0.8vh;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 4vh 10vh rgba(0, 0, 0, 0.95);
+
+    /* 🛡️ THE DEFINITIVE MASK FIX (FIXING IMAGE 8) */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    overflow: visible !important;
+}
+
+/* Physical Metal Buttons (Refined v25.0) */
+.btn-action,
+.btn-vol-up,
+.btn-vol-down,
+.btn-power {
+    position: absolute;
+    background: linear-gradient(to right, #2a2c31, #3e4149, #23252a) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.btn-action {
+    left: -0.4vh;
+    top: 10vh;
+    width: 0.5vh;
+    height: 3.2vh;
+    border-radius: 1vh 0 0 1vh;
+}
+
+.btn-vol-up {
+    left: -0.4vh;
+    top: 15.5vh;
+    width: 0.5vh;
+    height: 6.8vh;
+    border-radius: 1vh 0 0 1vh;
+}
+
+.btn-vol-down {
+    left: -0.4vh;
+    top: 24.5vh;
+    width: 0.5vh;
+    height: 6.8vh;
+    border-radius: 1vh 0 0 1vh;
+}
+
+.btn-power {
+    right: -0.4vh;
+    top: 20vh;
+    width: 0.5vh;
+    height: 10.5vh;
+    border-radius: 0 1vh 1vh 0;
+}
+
+/* -------------------------------------------------------------------
+   OLED DISPLAY (ZERO LEAK ARCHITECTURE)
+   ------------------------------------------------------------------- */
+.display-layer {
+    width: 100%;
+    height: 100%;
+    background: #000 !important;
+    border-radius: var(--display-radius);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#phone-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, #1a3a5a 0%, #080d12 100%) !important;
+    z-index: 0;
+}
+
+.watermark-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.12;
+    font-size: 3.5vh;
+    font-weight: 950;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.5vh;
+    pointer-events: none;
+}
+
+/* -------------------------------------------------------------------
+   DYNAMIC ISLAND & SYSTEM UI (IPHONE 15 PRO MAX)
+   ------------------------------------------------------------------- */
+.dynamic-island {
+    position: absolute;
+    top: 1.25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 13.5vh;
+    height: 3.5vh;
+    background: #000 !important;
+    border-radius: 999vh;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.5);
+}
+
+.status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.8vh 4vh 0 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    z-index: 2000;
+    pointer-events: none;
+    /* 🛡️ ANTI-CLIPPING BUG: Não bloqueia clique nos apps */
+}
+
+/* Relógio Pro (SF Pro Weight 700) */
+#clock-native {
+    font-size: 1.62vh;
+    font-weight: 700;
+    letter-spacing: -0.04vh;
+    text-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.5);
+}
+
+.status-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.8vh !important;
+    padding-right: 5.5vh !important; /* 🛡️ Recuo estendido para simetria perfeita e zona segura iOS */
+}
+
+.status-svg {
+    opacity: 0.92;
+    filter: drop-shadow(0 0.1vh 0.2vh rgba(0, 0, 0, 0.5));
+}
+
+/* -------------------------------------------------------------------
+   APP GRID & DOCK (LOCKED IN PLACE - FIXING IMAGE 5)
+   ------------------------------------------------------------------- */
+#app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8vh;
+    padding: 7.5vh 3.5vh 3.5vh 3.5vh !important;
+    z-index: 20;
+    flex-grow: 1;
+}
+
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.app-icon {
+    width: 7.2vh;
+    height: 7.2vh;
+    border-radius: 1.6vh;
+    position: relative;
+    overflow: visible;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 1vh 2.5vh rgba(0, 0, 0, 0.5);
+}
+
+.app-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.6vh;
+}
+
+.app-name {
+    margin-top: 1vh;
+    font-size: 1.05vh;
+    font-weight: 700;
+    color: #fff !important;
+    text-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.9);
+    text-align: center;
+    display: block !important;
+}
+
+#dock-master {
+    position: absolute !important;
+    bottom: 5vh !important;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 89%;
+    height: 9.5vh;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(50px) saturate(210%);
+    -webkit-backdrop-filter: blur(50px) saturate(210%);
+    border-radius: 3.5vh;
+    border: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 1vh;
+    z-index: 100;
+    box-shadow: 0 2vh 5vh rgba(0, 0, 0, 0.6);
+}
+
+.gesture-bar {
+    position: absolute;
+    bottom: 1.8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18vh;
+    height: 0.65vh;
+    background: #fff !important;
+    border-radius: 999vh;
+    z-index: 1000;
+}
+
+/* Badges (Image 7 Style) */
+.notification-badge {
+    position: absolute;
+    top: -0.7vh;
+    right: -0.7vh;
+    width: 2.3vh;
+    height: 2.3vh;
+    background: #FF3B30 !important;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.25vh;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1a1a1c;
+    box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.5);
+}
+
+/* 🏢 ORCA BANK - IOS PRO (REPAIR) */
+#app-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 500;
+    transform: translateY(100%);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    background: #000 !important;
+}
+
+#app-layer.active {
+    transform: translateY(0);
+}
